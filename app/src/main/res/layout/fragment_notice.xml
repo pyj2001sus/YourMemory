@@ -3,9 +3,10 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <ListView
+        android:id="@+id/niticeListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="알림프레그먼트"/>
+        android:layout_height="match_parent">
+    </ListView>
 
 </LinearLayout>

@@ -25,8 +25,11 @@ public class MainActivity extends BaseActivity {
         setValues();
     }
 
+
+
     @Override
     public void setupEvents() {
+
         homeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
