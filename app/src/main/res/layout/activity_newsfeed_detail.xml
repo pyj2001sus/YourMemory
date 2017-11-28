@@ -6,18 +6,32 @@
     android:background="@color/white">
 
     <LinearLayout
+        android:padding="5dp"
+        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:background="@color/tree">
+        android:layout_height="40dp"
+        android:background="@color/tree"
+        android:orientation="horizontal">
 
         <TextView
+            android:textSize="17sp"
             android:id="@+id/title"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_margin="5dp"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="나는 푼돈으로 캠핑카를 즐긴다"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/x_icon"/>
 
     </LinearLayout>
 

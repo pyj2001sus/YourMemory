@@ -1,7 +1,9 @@
 package kr.co.tjeit.yourmemory.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.sax.StartElementListener;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
@@ -20,6 +22,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
+import kr.co.tjeit.yourmemory.NewsfeedDetailActivity;
 import kr.co.tjeit.yourmemory.R;
 import kr.co.tjeit.yourmemory.data.NewsData;
 import kr.co.tjeit.yourmemory.util.GlobalData;
@@ -65,6 +68,7 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
         TextView viewCount = (TextView) row.findViewById(R.id.viewCount);
         LinearLayout likeBtn = (LinearLayout) row.findViewById(R.id.likeBtn);
         LinearLayout shareBtn = (LinearLayout) row.findViewById(R.id.shareBtn);
+        LinearLayout newsfeedLayout = (LinearLayout) row.findViewById(R.id.newsfeedLayout);
 
 
         title.setText(data.getTitle());
@@ -86,6 +90,13 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
             }
         });
 
+        newsfeedLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, NewsfeedDetailActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
 
         return row;
     }
