@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.co.tjeit.yourmemory">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -21,8 +21,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".SignUpActivity"
-            android:theme="@style/notitle"></activity>
+        <activity
+            android:name=".SignUpActivity"
+            android:theme="@style/notitle" />
+        <activity android:name=".FamilyActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".MakeFamilyActivity" />
+        <activity android:name=".WritingActivity" />
+        <activity android:name=".SettingActivity" />
+        <activity android:name=".NewsfeedDetailActivity"></activity>
     </application>
 
 </manifest>

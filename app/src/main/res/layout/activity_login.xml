@@ -15,9 +15,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="150dp"
+            android:layout_width="300dp"
             android:layout_height="150dp"
-            android:src="@mipmap/ic_launcher_round"
+            android:src="@drawable/family_tree_text"
             android:layout_marginBottom="50dp"/>
 
         <LinearLayout

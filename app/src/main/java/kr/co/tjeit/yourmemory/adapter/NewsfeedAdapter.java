@@ -1,19 +1,28 @@
 package kr.co.tjeit.yourmemory.adapter;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+
+import org.w3c.dom.Text;
 
 import java.util.List;
 
 import kr.co.tjeit.yourmemory.R;
 import kr.co.tjeit.yourmemory.data.NewsData;
+import kr.co.tjeit.yourmemory.util.GlobalData;
 
 /**
  * Created by the on 2017-11-27.
@@ -43,9 +52,44 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
 
         NewsData data = mList.get(position);
 
+        TextView title = (TextView) row.findViewById(R.id.title);
+        ImageView userProfileImg = (ImageView) row.findViewById(R.id.userProfileImg);
+        TextView userName = (TextView) row.findViewById(R.id.userName);
+        TextView minuteAgo = (TextView) row.findViewById(R.id.minuteAgo);
+        TextView contentTxt = (TextView) row.findViewById(R.id.contentTxt);
+        ImageView contentImg = (ImageView) row.findViewById(R.id.contentImg);
+        ImageView likeImg = (ImageView) row.findViewById(R.id.likeImg);
+        TextView likeCountTxt = (TextView) row.findViewById(R.id.likeCountTxt);
+        TextView replyTxt = (TextView) row.findViewById(R.id.replyTxt);
+        TextView shareTxt = (TextView) row.findViewById(R.id.shareTxt);
+        TextView viewCount = (TextView) row.findViewById(R.id.viewCount);
+        LinearLayout likeBtn = (LinearLayout) row.findViewById(R.id.likeBtn);
+        LinearLayout shareBtn = (LinearLayout) row.findViewById(R.id.shareBtn);
+
+
+        title.setText(data.getTitle());
+        Glide.with(mContext).load(data.getUserProfileURL()).into(userProfileImg);
+        userName.setText(data.getUserName());
+        minuteAgo.setText(data.getMinuteAgo()+" 분 전");
+        contentTxt.setText(data.getContent());
+        Glide.with(mContext).load(data.getNewsImageURL()).into(contentImg);
+
+        likeCountTxt.setText(data.getLikeCount()+"");
+        replyTxt.setText("댓글 "+data.getReplyCount());
+        shareTxt.setText("공유 "+data.getShareCount());
+        viewCount.setText(data.getLookUpCount()+"");
+
+        likeBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(mContext, "회원님이 해당 개시물을 좋아합니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         return row;
     }
+
 
 }
 
