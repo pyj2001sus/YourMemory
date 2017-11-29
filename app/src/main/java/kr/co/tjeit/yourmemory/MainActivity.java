@@ -10,8 +10,6 @@ import android.widget.TextView;
 
 public class MainActivity extends BaseActivity {
 
-    ViewPager viewPager = null;
-
     private ImageView homeBtn;
     private ImageView newsfeedBtn;
     private ImageView noticeBtn;

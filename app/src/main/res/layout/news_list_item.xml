@@ -97,7 +97,7 @@
                     android:id="@+id/likeImg"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/like_icon" />
+                    android:src="@drawable/heart_icon" />
 
                 <TextView
                     android:id="@+id/likeCountTxt"
@@ -164,7 +164,7 @@
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:src="@drawable/like_icon" />
+                    android:src="@drawable/heart_icon" />
 
                 <TextView
                     android:layout_width="wrap_content"

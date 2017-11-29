@@ -49,13 +49,13 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(final int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View row = convertView;
         if (row == null) {
             row = inf.inflate(R.layout.news_list_item, null);
         }
 
-        NewsData data = mList.get(position);
+        final NewsData data = mList.get(position);
 
         TextView title = (TextView) row.findViewById(R.id.title);
         ImageView userProfileImg = (ImageView) row.findViewById(R.id.userProfileImg);
@@ -107,11 +107,11 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
             public void onClick(View view) {
                 Intent msg = new Intent(Intent.ACTION_SEND);
                 msg.addCategory(Intent.CATEGORY_DEFAULT);
-                msg.putExtra(Intent.EXTRA_SUBJECT, "주제");
-                msg.putExtra(Intent.EXTRA_TEXT, "내용");
-                msg.putExtra(Intent.EXTRA_TITLE, "제목");
+                msg.putExtra(Intent.EXTRA_SUBJECT, data.getTitle());
+                msg.putExtra(Intent.EXTRA_TEXT, data.getContent());
+                msg.putExtra(Intent.EXTRA_STREAM, data.getNewsImageURL());
                 msg.setType("text/plain");
-                mContext.startActivity(Intent.createChooser(msg, "공유"));
+                mContext.startActivity(Intent.createChooser(msg, "공유하기"));
             }
         });
 
