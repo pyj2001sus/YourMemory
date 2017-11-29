@@ -5,11 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="kr.co.tjeit.yourmemory.SettingActivity">
+    tools:context="kr.co.tjeit.yourmemory.UserDetailActivity"
+    android:background="#90000000">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="설정"/>
+
 
 </LinearLayout>

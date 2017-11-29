@@ -71,14 +71,6 @@
                     android:src="@drawable/newsfeed_empty_icon"
                     android:visibility="gone" />
 
-                <ImageView
-                    android:id="@+id/settingBtn"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="5dp"
-                    android:src="@drawable/setting_empty_icon"
-                    android:visibility="gone" />
-
             </LinearLayout>
 
         </FrameLayout>
@@ -145,12 +137,6 @@
                 android:layout_height="match_parent"
                 tools:layout="@layout/fragment_home" />
 
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v4.view.ViewPager>
-
         </FrameLayout>
 
         <FrameLayout
@@ -164,12 +150,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/fragment_news_feed" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v4.view.ViewPager>
 
         </FrameLayout>
 
@@ -206,12 +186,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout="@layout/fragment_see_more" />
-
-            <android.support.v4.view.ViewPager
-                android:id="@+id/viewPager4"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </android.support.v4.view.ViewPager>
 
         </FrameLayout>
 

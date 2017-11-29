@@ -3,12 +3,12 @@ package kr.co.tjeit.yourmemory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class SettingActivity extends BaseActivity {
+public class UserDetailActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting);
+        setContentView(R.layout.activity_user_detail);
         bindViews();
         setupEvents();
         setValues();

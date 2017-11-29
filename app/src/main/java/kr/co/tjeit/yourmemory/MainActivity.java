@@ -2,12 +2,15 @@ package kr.co.tjeit.yourmemory;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends BaseActivity {
+
+    ViewPager viewPager = null;
 
     private ImageView homeBtn;
     private ImageView newsfeedBtn;
@@ -22,7 +25,6 @@ public class MainActivity extends BaseActivity {
     private ImageView imageBtn1;
     private ImageView imageBtn2;
     private ImageView imageBtn3;
-    private ImageView imageBtn4;
     private ImageView searchBtn;
     private ImageView plusBtn;
     private ImageView writingBtn;
@@ -65,21 +67,12 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        settingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(mContext, SettingActivity.class);
-                startActivity(intent);
-            }
-        });
-
         mainBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 searchBtn.setVisibility(View.VISIBLE);
                 plusBtn.setVisibility(View.VISIBLE);
                 writingBtn.setVisibility(View.GONE);
-                settingBtn.setVisibility(View.GONE);
                 mainTxt.setVisibility(View.GONE);
                 homeFragment.setVisibility(View.VISIBLE);
                 newsfeedFragment.setVisibility(View.GONE);
@@ -94,7 +87,6 @@ public class MainActivity extends BaseActivity {
                 searchBtn.setVisibility(View.VISIBLE);
                 plusBtn.setVisibility(View.VISIBLE);
                 writingBtn.setVisibility(View.GONE);
-                settingBtn.setVisibility(View.GONE);
                 mainTxt.setVisibility(View.GONE);
                 homeFragment.setVisibility(View.VISIBLE);
                 newsfeedFragment.setVisibility(View.GONE);
@@ -109,7 +101,6 @@ public class MainActivity extends BaseActivity {
                 searchBtn.setVisibility(View.VISIBLE);
                 plusBtn.setVisibility(View.GONE);
                 writingBtn.setVisibility(View.VISIBLE);
-                settingBtn.setVisibility(View.GONE);
                 mainTxt.setVisibility(View.VISIBLE);
                 mainTxt.setText("새소식");
                 homeFragment.setVisibility(View.GONE);
@@ -125,7 +116,6 @@ public class MainActivity extends BaseActivity {
                 searchBtn.setVisibility(View.GONE);
                 plusBtn.setVisibility(View.GONE);
                 writingBtn.setVisibility(View.GONE);
-                settingBtn.setVisibility(View.VISIBLE);
                 mainTxt.setVisibility(View.VISIBLE);
                 mainTxt.setVisibility(View.VISIBLE);
                 mainTxt.setText("알림");
@@ -142,7 +132,6 @@ public class MainActivity extends BaseActivity {
                 searchBtn.setVisibility(View.GONE);
                 plusBtn.setVisibility(View.GONE);
                 writingBtn.setVisibility(View.GONE);
-                settingBtn.setVisibility(View.GONE);
                 mainTxt.setVisibility(View.VISIBLE);
                 mainTxt.setVisibility(View.VISIBLE);
                 mainTxt.setText("더 보기");
@@ -170,7 +159,6 @@ public class MainActivity extends BaseActivity {
         this.noticeBtn = (ImageView) findViewById(R.id.noticeBtn);
         this.newsfeedBtn = (ImageView) findViewById(R.id.newsfeedBtn);
         this.homeBtn = (ImageView) findViewById(R.id.homeBtn);
-        this.settingBtn = (ImageView) findViewById(R.id.settingBtn);
         this.writingBtn = (ImageView) findViewById(R.id.writingBtn);
         this.plusBtn = (ImageView) findViewById(R.id.plusBtn);
         this.searchBtn = (ImageView) findViewById(R.id.searchBtn);

@@ -28,8 +28,8 @@
         <activity android:name=".SearchActivity" />
         <activity android:name=".MakeFamilyActivity" />
         <activity android:name=".WritingActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".NewsfeedDetailActivity"></activity>
+        <activity android:name=".NewsfeedDetailActivity" />
+        <activity android:name=".UserDetailActivity"></activity>
     </application>
 
 </manifest>

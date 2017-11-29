@@ -21,9 +21,11 @@ import com.bumptech.glide.Glide;
 import org.w3c.dom.Text;
 
 import java.util.List;
+import java.util.Locale;
 
 import kr.co.tjeit.yourmemory.NewsfeedDetailActivity;
 import kr.co.tjeit.yourmemory.R;
+import kr.co.tjeit.yourmemory.UserDetailActivity;
 import kr.co.tjeit.yourmemory.data.NewsData;
 import kr.co.tjeit.yourmemory.util.GlobalData;
 
@@ -93,7 +95,37 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
         newsfeedLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(mContext, NewsfeedDetailActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent msg = new Intent(Intent.ACTION_SEND);
+                msg.addCategory(Intent.CATEGORY_DEFAULT);
+                msg.putExtra(Intent.EXTRA_SUBJECT, "주제");
+                msg.putExtra(Intent.EXTRA_TEXT, "내용");
+                msg.putExtra(Intent.EXTRA_TITLE, "제목");
+                msg.setType("text/plain");
+                mContext.startActivity(Intent.createChooser(msg, "공유"));
+            }
+        });
+
+        userProfileImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, UserDetailActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+
+        userName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, UserDetailActivity.class);
                 mContext.startActivity(intent);
             }
         });
