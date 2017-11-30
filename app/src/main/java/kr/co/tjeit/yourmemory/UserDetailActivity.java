@@ -15,11 +15,13 @@ public class UserDetailActivity extends BaseActivity {
     private android.widget.TextView userPhoneTxt;
     private android.widget.ImageView callBtn;
     private ImageView sendEmailBtn;
+    private ImageView backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_detail);
+
         bindViews();
         setupEvents();
         setValues();
@@ -27,6 +29,13 @@ public class UserDetailActivity extends BaseActivity {
 
     @Override
     public void setupEvents() {
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         callBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,5 +69,6 @@ public class UserDetailActivity extends BaseActivity {
         this.userEmailTxt = (TextView) findViewById(R.id.userEmailTxt);
         this.userBirthdayTxt = (TextView) findViewById(R.id.userBirthdayTxt);
         this.userNameTxt = (TextView) findViewById(R.id.userNameTxt);
+        this.backBtn = (ImageView) findViewById(R.id.backBtn);
     }
 }

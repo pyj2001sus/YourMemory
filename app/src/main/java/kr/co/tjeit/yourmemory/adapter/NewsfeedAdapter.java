@@ -67,11 +67,10 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
         TextView likeCountTxt = (TextView) row.findViewById(R.id.likeCountTxt);
         TextView replyTxt = (TextView) row.findViewById(R.id.replyTxt);
         TextView shareTxt = (TextView) row.findViewById(R.id.shareTxt);
-        TextView viewCount = (TextView) row.findViewById(R.id.viewCount);
+        final TextView viewCount = (TextView) row.findViewById(R.id.viewCount);
         LinearLayout likeBtn = (LinearLayout) row.findViewById(R.id.likeBtn);
         LinearLayout shareBtn = (LinearLayout) row.findViewById(R.id.shareBtn);
         LinearLayout newsfeedLayout = (LinearLayout) row.findViewById(R.id.newsfeedLayout);
-
 
         title.setText(data.getTitle());
         Glide.with(mContext).load(data.getUserProfileURL()).into(userProfileImg);
@@ -95,9 +94,9 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
         newsfeedLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent(mContext, NewsfeedDetailActivity.class);
                 mContext.startActivity(intent);
+
             }
         });
 
