@@ -14,16 +14,18 @@ public class UserData implements Serializable {
     private int gender;
     private Calendar birthDay;
     private String profile_url;
+    private String phone_num;
 
     public UserData() {
     }
 
-    public UserData(String email, String name, int gender, Calendar birthDay, String profile_url) {
+    public UserData(String email, String name, int gender, Calendar birthDay, String profile_url, String phone_num) {
         this.email = email;
         this.name = name;
         this.gender = gender;
         this.birthDay = birthDay;
         this.profile_url = profile_url;
+        this.phone_num = phone_num;
     }
 
     public String getEmail() {
@@ -64,5 +66,13 @@ public class UserData implements Serializable {
 
     public void setProfile_url(String profile_url) {
         this.profile_url = profile_url;
+    }
+
+    public String getPhone_num() {
+        return phone_num;
+    }
+
+    public void setPhone_num(String phone_num) {
+        this.phone_num = phone_num;
     }
 }
