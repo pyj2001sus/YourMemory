@@ -31,7 +31,8 @@
         <activity android:name=".MakeFamilyActivity" />
         <activity android:name=".WritingActivity" />
         <activity android:name=".NewsfeedDetailActivity" />
-        <activity android:name=".UserDetailActivity"></activity>
+        <activity android:name=".UserDetailActivity" />
+        <activity android:name=".ProfileSettingActivity"></activity>
     </application>
 
 </manifest>

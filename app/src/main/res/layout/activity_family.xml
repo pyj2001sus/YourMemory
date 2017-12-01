@@ -30,24 +30,68 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <ImageView
-                android:id="@+id/searchBtn"
-                android:layout_marginRight="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:layout_weight="1" />
 
             <ImageView
                 android:id="@+id/newsfeedBtn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:src="@mipmap/ic_launcher_round"/>
+                android:src="@mipmap/ic_launcher_round" />
 
         </LinearLayout>
 
     </FrameLayout>
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+
+    <ListView
+        android:id="@+id/newsListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </ListView>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line"/>
+
+
+    <LinearLayout
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@mipmap/ic_launcher_round" />
+
+    </LinearLayout>
 
 </LinearLayout>

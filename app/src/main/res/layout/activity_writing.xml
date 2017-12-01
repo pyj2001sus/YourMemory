@@ -7,9 +7,27 @@
     android:orientation="vertical"
     tools:context="kr.co.tjeit.yourmemory.WritingActivity">
 
-    <TextView
+    <LinearLayout
+        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="글쓰기"/>
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/ic_launcher_round"/>
+
+    </LinearLayout>
 
 </LinearLayout>

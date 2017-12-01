@@ -96,7 +96,6 @@ public class NewsfeedAdapter extends ArrayAdapter<NewsData> {
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, NewsfeedDetailActivity.class);
                 mContext.startActivity(intent);
-
             }
         });
 

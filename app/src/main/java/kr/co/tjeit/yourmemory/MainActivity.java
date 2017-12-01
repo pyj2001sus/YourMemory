@@ -7,8 +7,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
+
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
 
     private ImageView homeBtn;
     private ImageView newsfeedBtn;
@@ -146,6 +150,25 @@ public class MainActivity extends BaseActivity {
     public void setValues() {
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+
+        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
+        {
+            super.onBackPressed();
+        }
+        else
+        {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번 더 누르면 앱이 종료됩니다.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
 
     @Override
     public void bindViews() {
