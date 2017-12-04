@@ -8,25 +8,110 @@
     tools:context="kr.co.tjeit.yourmemory.WritingActivity">
 
     <LinearLayout
-        android:padding="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <ImageView
+            android:id="@+id/backBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"/>
+            android:src="@drawable/x_icon" />
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"/>
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="새소식"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-        <ImageView
+        <TextView
+            android:id="@+id/okBtn"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher_round"/>
+            android:gravity="center"
+            android:text="게시"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+            android:hint="제목을 입력하세요"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textSize="17sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/line" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#00000000"
+            android:hint="내용을 입력하세요"
+            android:textSize="17sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/pictureBtn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/picture_icon" />
+
+        <ImageView
+            android:id="@+id/motionPictureBtn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/motion_picture_icon" />
+
+        <ImageView
+            android:id="@+id/cameraBtn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_weight="1"
+            android:src="@drawable/camera_icon" />
 
     </LinearLayout>
 

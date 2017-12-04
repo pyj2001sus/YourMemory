@@ -6,6 +6,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import kr.co.tjeit.yourmemory.adapter.NewsfeedAdapter;
+import kr.co.tjeit.yourmemory.data.FamilyData;
 import kr.co.tjeit.yourmemory.data.NewsData;
 import kr.co.tjeit.yourmemory.data.NoticeData;
 import kr.co.tjeit.yourmemory.data.UserData;
@@ -20,11 +21,13 @@ public class GlobalData {
     public static List<NewsData> newsfeed = new ArrayList<>();
     public static List<NoticeData> notice = new ArrayList<>();
     public static List<UserData> user = new ArrayList<>();
+    public static List<FamilyData> family = new ArrayList<>();
 
     public static void initGlobalData() {
         newsfeed.clear();
         notice.clear();
         user.clear();
+        family.clear();
 
         newsfeed.add(new NewsData(1, "박영주", "https://lh3.googleusercontent.com/B4Rmc8NPG7fHIGmN65214ppzNGHNa_wuLSSJ6Dz85KJoZ0zlBFnpH16pOJBHpwA0fCs=w300",
                 15, "반갑습니다", "나는 행복합니다~ 나는 행복합니다~ 나는 행복합니다~ 이글스라 행복합니다~",
@@ -56,7 +59,14 @@ public class GlobalData {
         user.add(new UserData("pjewjf@hanmail.net", "김현철", 1, Calendar.getInstance(), "", "33333333"));
         user.add(new UserData("adslkjn@hanmail.net", "손익상", 1, Calendar.getInstance(), "", "44444444"));
 
-
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
+        family.add(new FamilyData("우리가족", "http://cfile21.uf.tistory.com/image/2551313E58198D5E1D2230", "행복한 우리가족의 모임입니다."));
 
     }
 }
