@@ -1,17 +1,15 @@
 package kr.co.tjeit.yourmemory;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.json.JSONObject;
+
+import kr.co.tjeit.yourmemory.util.ServerUtil;
 
 public class LoginActivity extends BaseActivity {
 
@@ -19,6 +17,8 @@ public class LoginActivity extends BaseActivity {
     private TextView textView;
     private android.widget.Button loginBtn;
     private Button signupBtn;
+    private android.widget.EditText emailEdt;
+    private android.widget.EditText pwEdt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,14 @@ public class LoginActivity extends BaseActivity {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(mContext, MainActivity.class);
-                startActivity(intent);
+
+                ServerUtil.login(mContext, emailEdt.getText().toString(), pwEdt.getText().toString(), new ServerUtil.JsonResponseHandler() {
+                    @Override
+                    public void onResponse(JSONObject json) {
+                        Intent intent = new Intent(mContext, MainActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
 
@@ -69,6 +75,8 @@ public class LoginActivity extends BaseActivity {
         this.signupBtn = (Button) findViewById(R.id.signupBtn);
         this.findPwTxt = (TextView) findViewById(R.id.findPwTxt);
         this.loginBtn = (Button) findViewById(R.id.loginBtn);
+        this.pwEdt = (EditText) findViewById(R.id.pwEdt);
+        this.emailEdt = (EditText) findViewById(R.id.emailEdt);
         this.textView = (TextView) findViewById(R.id.textView);
     }
 }

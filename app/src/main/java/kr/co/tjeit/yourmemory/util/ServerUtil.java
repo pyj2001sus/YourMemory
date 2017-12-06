@@ -16,7 +16,7 @@ import java.util.Map;
 public class ServerUtil {
 
 //    서버와 통신을 하기 위한 ip주소
-    private final static String BASE_URL = "http://192.168.20.48:8080/";
+    private final static String BASE_URL = "http://192.168.20.48:8080/memory/";
 
     public interface JsonResponseHandler {
         void onResponse(JSONObject json);
@@ -237,15 +237,15 @@ public class ServerUtil {
     }
 
     public static void login(final Context context,
-                                     final String stdId,
-                                     final String stdPw,
+                                     final String email,
+                                     final String pw,
                                      final JsonResponseHandler handler) {
-        String url = BASE_URL+"lm/login";
+        String url = BASE_URL+"login";
         //		String registrationId = ContextUtil.getRegistrationId(context);
 
         Map<String, String> data = new HashMap<String, String>();
-        data.put("studentId", stdId);
-        data.put("studentPw", stdPw);
+        data.put("email", email);
+        data.put("password", pw);
 
         AsyncHttpRequest.post(context, url,  data, false, new AsyncHttpRequest.HttpResponseHandler() {
 

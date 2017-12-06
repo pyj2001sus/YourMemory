@@ -9,27 +9,27 @@
     tools:context="kr.co.tjeit.yourmemory.LoginActivity">
 
     <LinearLayout
-        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
             android:layout_width="300dp"
             android:layout_height="150dp"
-            android:src="@drawable/family_tree_text"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="50dp"
+            android:src="@drawable/family_tree_text" />
 
         <LinearLayout
-            android:layout_margin="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:orientation="horizontal">
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -47,36 +47,38 @@
                         android:textSize="18sp" />
 
                     <EditText
-                        android:maxLines="1"
-                        android:inputType="textEmailAddress"
-                        android:padding="10dp"
+                        android:id="@+id/emailEdt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/login_background"/>
+                        android:background="@drawable/login_background"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1"
+                        android:padding="10dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_marginTop="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="18dp"
-                        android:gravity="center"
-                        android:textColor="@color/tree"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
-                        android:text="password"/>
+                        android:gravity="center"
+                        android:text="password"
+                        android:textColor="@color/tree"
+                        android:textSize="18dp" />
 
                     <EditText
-                        android:maxLines="1"
-                        android:inputType="textPassword"
-                        android:padding="10dp"
+                        android:id="@+id/pwEdt"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/login_background"/>
+                        android:background="@drawable/login_background"
+                        android:inputType="textPassword"
+                        android:maxLines="1"
+                        android:padding="10dp" />
 
                 </LinearLayout>
 
@@ -84,50 +86,50 @@
 
             <Button
                 android:id="@+id/loginBtn"
-                android:textSize="18sp"
-                android:layout_margin="5dp"
-                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:background="@drawable/login_button_background"
                 android:text="LOGIN"
-                android:background="@drawable/login_button_background"/>
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
         </LinearLayout>
 
         <CheckBox
-            android:textSize="18sp"
-            android:buttonTint="@color/tree"
-            android:textColor="@color/tree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="아이디 저장"/>
+            android:buttonTint="@color/tree"
+            android:text="아이디 저장"
+            android:textColor="@color/tree"
+            android:textSize="18sp" />
 
         <TextView
-            android:textColor="@color/tree"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
             android:id="@+id/findPwTxt"
-            android:autoLink="web"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="비밀번호를 잊어버리셨나요?"/>
+            android:layout_marginTop="10dp"
+            android:autoLink="web"
+            android:gravity="center"
+            android:text="비밀번호를 잊어버리셨나요?"
+            android:textColor="@color/tree" />
 
         <Button
             android:id="@+id/signupBtn"
-            android:layout_margin="10dp"
-            android:textSize="18sp"
-            android:textColor="@color/white"
-            android:text="회원 가입"
-            android:background="@drawable/login_button_background"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <TextView
-            android:textColor="@color/tree"
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="어서! 가족들이 기다리고 있어요!"/>
+            android:layout_margin="10dp"
+            android:background="@drawable/login_button_background"
+            android:text="회원 가입"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="어서! 가족들이 기다리고 있어요!"
+            android:textColor="@color/tree" />
 
     </LinearLayout>
 
