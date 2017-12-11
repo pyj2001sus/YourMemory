@@ -16,33 +16,24 @@ public class ContextUtil {
     private static UserData loginUser = null;
 
     private final static String prefName = "familyTree";
-    private final static String USER_EMAIL = "UESR_ID";
-    private final static String USER_NAME = "USER_NICK_NAME";
-    private final static String USER_GENDER = "USER_GENDER";
-    private final static String USER_BIRTHDAY = "USER_BIRTHDAY";
-    private final static String USER_PROFILE_URL = "USER_PROFILE_URL";
-
+    private final static String USER_EMAIL = "USER_EMAIL";
+    private final static String USER_NAME = "USER_NAME";
+    private final static String USER_PHONE = "USER_PHONE";
 
     public static void logout(Context context) {
         SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         pref.edit().putString(USER_EMAIL, "").commit();
         pref.edit().putString(USER_NAME, "").commit();
-        pref.edit().putString(USER_GENDER, "").commit();
-        pref.edit().putString(USER_BIRTHDAY, "").commit();
-        pref.edit().putString(USER_PROFILE_URL, "").commit();
+        pref.edit().putString(USER_PHONE, "").commit();
 
         loginUser = null;
-
-
     }
 
     public static void login(Context context, UserData loginUser) {
         SharedPreferences pref = context.getSharedPreferences(prefName, Context.MODE_PRIVATE);
         pref.edit().putString(USER_EMAIL, loginUser.getEmail()).commit();
-        pref.edit().putString(USER_NAME, loginUser.getName()).commit();
-        pref.edit().putString(USER_GENDER, loginUser.getGender()+"").commit();
-        pref.edit().putString(USER_BIRTHDAY, loginUser.getBirthDay()+"").commit();
-        pref.edit().putString(USER_PROFILE_URL, loginUser.getProfile_url()).commit();
+        pref.edit().putString(USER_NAME, loginUser.getGender()+"").commit();
+        pref.edit().putString(USER_PHONE, loginUser.getBirthDay()+"").commit();
 
     }
 

@@ -15,6 +15,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
+
+        <service android:name=".fcm.MyFCMService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <service android:name=".fcm.MyFCMIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+
+
         <activity android:name=".MainActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
@@ -26,7 +41,7 @@
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".SignUpActivity"
-            android:theme="@style/notitle" />
+            />
         <activity android:name=".FamilyActivity" />
         <activity android:name=".SearchActivity" />
         <activity android:name=".MakeFamilyActivity" />

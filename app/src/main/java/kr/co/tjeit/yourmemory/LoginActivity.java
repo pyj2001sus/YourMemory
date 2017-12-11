@@ -6,9 +6,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import kr.co.tjeit.yourmemory.util.ContextUtil;
 import kr.co.tjeit.yourmemory.util.ServerUtil;
 
 public class LoginActivity extends BaseActivity {
@@ -35,11 +38,39 @@ public class LoginActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
 
-                ServerUtil.login(mContext, emailEdt.getText().toString(), pwEdt.getText().toString(), new ServerUtil.JsonResponseHandler() {
+                final String loginId = emailEdt.getText().toString();
+                final String loginPw = pwEdt.getText().toString();
+
+                ServerUtil.login(mContext, loginId, loginPw, new ServerUtil.JsonResponseHandler() {
                     @Override
                     public void onResponse(JSONObject json) {
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
+                        try {
+
+                            if (json.getBoolean("result")) {
+                                if (loginId.equals(json.getJSONObject("user").getString("email")) && loginPw.equals(json.getJSONObject("user").getString("password"))) {
+                                    Toast.makeText(mContext, "로그인에 성공했습니다.", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(mContext, MainActivity.class);
+                                    startActivity(intent);
+                                } else {
+                                    if (loginId.equals("")){
+                                        Toast.makeText(mContext, "이메일을 입력하세요.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    if (loginPw.equals("")){
+                                        Toast.makeText(mContext, "비밀번호를 입력하세요.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    if (!loginId.equals(json.getJSONObject("user").getString("email"))){
+                                        Toast.makeText(mContext, "일치하는 이메일이 없습니다.", Toast.LENGTH_SHORT).show();
+                                    }
+                                    if (!loginPw.equals(json.getJSONObject("password"))){
+                                        Toast.makeText(mContext, "비밀번호를 확인해주세요.", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
                     }
                 });
             }
@@ -59,10 +90,8 @@ public class LoginActivity extends BaseActivity {
 //                dialog.show();
                 Intent intent = new Intent(mContext, SignUpActivity.class);
                 startActivity(intent);
-
             }
         });
-
     }
 
     @Override
